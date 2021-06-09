@@ -6,14 +6,22 @@ import Messages from "./Message";
 
 function App() {
   const [input, setInput] = useState("")
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState([
+    { username: "Ali", text: "han janu" },
+
+
+  ])
+  const [userName, setUserName] = useState('')
   console.log(input)
   console.log(messages)
 
+  useEffect(() => {
+    setUserName(prompt("Please Enter Your Name"))
+  }, [])
 
   const sendMessage = (e) => {
     e.preventDefault()
-    setMessages([...messages, input])
+    setMessages([...messages, { username: userName, text: input }])
     setInput('')
   }
 
@@ -21,6 +29,7 @@ function App() {
     <div className="App">
 
       <h1>Hello Everyone</h1>
+      <h4>Welcome {userName}</h4>
       <form>
         <FormControl>
           <InputLabel >Enter Message</InputLabel>
@@ -32,7 +41,7 @@ function App() {
       {
         messages.map(message => {
           return (
-            <Messages text={message} />
+            <Messages userName={userName} message={message} />
 
           )
         })
