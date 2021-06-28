@@ -1,5 +1,5 @@
-.message-card{
-    padding: 10px;
+.message{
+   
     margin: 10px;
     width: fit-content;
 }
@@ -7,12 +7,15 @@
     margin-left: auto;
     color: white;
     text-align: left !important;
+
 }
-.message-card{
+.message_userCard{
     background-color: #0b81ff !important;
-    align-items: flex-end;
+
+
+    /* align-items: flex-end; */
 }
 .message-guestCard{
-    background-color:#0b81ff !important;
+    background-color: #e9e9eb !important;
 
 }
